@@ -500,9 +500,15 @@ const openaiModels = [
   "o1-mini",
   "o1-preview",
   "o3-mini",
-  "gpt-4.1",
+  "gpt-4.1-2025-04-14",
   "gpt-4.1-mini",
-  "gpt-4.1-nano"
+  "gpt-4.1-nano",
+  "claude-3-7-sonnet-20250219",
+  "gemini-2.0-flash",
+  "deepseek-chat",
+  "deepseek-coder",
+  "deepseek-reasoner",
+  ""
 ];
 
 const googleModels = [
