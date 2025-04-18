@@ -508,7 +508,6 @@ const openaiModels = [
   "deepseek-chat",
   "deepseek-coder",
   "deepseek-reasoner",
-  ""
 ];
 
 const googleModels = [
