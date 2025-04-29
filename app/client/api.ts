@@ -386,7 +386,7 @@ export function getClientApi(provider: ServiceProvider): ClientApi {
       return new ClientApi(ModelProvider.Iflytek);
     case ServiceProvider.DeepSeek:
       return new ClientApi(ModelProvider.DeepSeek);
-    case ServiceProvider.ModelScople:
+    case ServiceProvider.ModelScope:
       return new ClientApi(ModelProvider.ModelScope);
     case ServiceProvider.XAI:
       return new ClientApi(ModelProvider.XAI);
