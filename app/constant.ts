@@ -612,7 +612,8 @@ const alibabaModes = [
 ];
 
 const modelscopeModels = [
-  "Qwen/Qwen3-32B"
+  "Qwen/Qwen3-32B",
+  "Qwen/QwQ-32B"
 ];
 
 const tencentModels = [
