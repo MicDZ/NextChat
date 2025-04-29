@@ -160,6 +160,7 @@ export enum ModelProvider {
   ChatGLM = "ChatGLM",
   DeepSeek = "DeepSeek",
   SiliconFlow = "SiliconFlow",
+  ModelScope = "ModelScope"
 }
 
 export const Stability = {
