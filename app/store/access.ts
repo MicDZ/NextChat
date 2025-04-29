@@ -17,6 +17,7 @@ import {
   XAI_BASE_URL,
   CHATGLM_BASE_URL,
   SILICONFLOW_BASE_URL,
+  MODELSCOPE_BASE_URL
 } from "../constant";
 import { getHeaders } from "../client/api";
 import { getClientConfig } from "../config/client";
@@ -50,6 +51,8 @@ const DEFAULT_STABILITY_URL = isApp ? STABILITY_BASE_URL : ApiPath.Stability;
 const DEFAULT_IFLYTEK_URL = isApp ? IFLYTEK_BASE_URL : ApiPath.Iflytek;
 
 const DEFAULT_DEEPSEEK_URL = isApp ? DEEPSEEK_BASE_URL : ApiPath.DeepSeek;
+
+const DEFAULT_MODELSCOPE_URL = isApp ? MODELSCOPE_BASE_URL : ApiPath.ModelScope;
 
 const DEFAULT_XAI_URL = isApp ? XAI_BASE_URL : ApiPath.XAI;
 
@@ -120,6 +123,9 @@ const DEFAULT_ACCESS_STATE = {
   deepseekUrl: DEFAULT_DEEPSEEK_URL,
   deepseekApiKey: "",
 
+  // modelscope
+  modelscopeUrl: DEFAULT_MODELSCOPE_URL,
+  modelscopeApiKey: "",
   // xai
   xaiUrl: DEFAULT_XAI_URL,
   xaiApiKey: "",
@@ -206,6 +212,9 @@ export const useAccessStore = createPersistStore(
     isValidDeepSeek() {
       return ensure(get(), ["deepseekApiKey"]);
     },
+    isValidModelScope() {
+      return ensure(get(), ["modelscopeApiKey"]);
+    },
 
     isValidXAI() {
       return ensure(get(), ["xaiApiKey"]);
@@ -235,6 +244,7 @@ export const useAccessStore = createPersistStore(
         this.isValidMoonshot() ||
         this.isValidIflytek() ||
         this.isValidDeepSeek() ||
+        this.isValidModelScope() ||
         this.isValidXAI() ||
         this.isValidChatGLM() ||
         this.isValidSiliconFlow() ||
