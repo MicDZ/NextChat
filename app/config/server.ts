@@ -88,6 +88,9 @@ declare global {
       SILICONFLOW_URL?: string;
       SILICONFLOW_API_KEY?: string;
 
+      MODELSCOPE_URL?: string;
+      MODELSCOPE_API_KEY?: string;
+
       // custom template for preprocessing user input
       DEFAULT_INPUT_TEMPLATE?: string;
 
@@ -157,6 +160,7 @@ export const getServerSideConfig = () => {
   const isBaidu = !!process.env.BAIDU_API_KEY;
   const isBytedance = !!process.env.BYTEDANCE_API_KEY;
   const isAlibaba = !!process.env.ALIBABA_API_KEY;
+  const isModelScope = !!process.env.MODELSCOPE_API_KEY;
   const isMoonshot = !!process.env.MOONSHOT_API_KEY;
   const isIflytek = !!process.env.IFLYTEK_API_KEY;
   const isDeepSeek = !!process.env.DEEPSEEK_API_KEY;
@@ -229,6 +233,10 @@ export const getServerSideConfig = () => {
     deepseekUrl: process.env.DEEPSEEK_URL,
     deepseekApiKey: getApiKey(process.env.DEEPSEEK_API_KEY),
 
+    isModelScope,
+    modelscopeUrl: process.env.MODELSCOPE_URL,
+    modelscopeApiKey: getApiKey(process.env.MODELSCOPE_API_KEY),
+    
     isXAI,
     xaiUrl: process.env.XAI_URL,
     xaiApiKey: getApiKey(process.env.XAI_API_KEY),
