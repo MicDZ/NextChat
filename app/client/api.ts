@@ -338,7 +338,7 @@ export function getHeaders(ignoreHeaders: boolean = false) {
     isMoonshot,
     isIflytek,
     isDeepSeek,
-    isModelScope
+    isModelScope,
     isXAI,
     isChatGLM,
     isSiliconFlow,
