@@ -9,6 +9,8 @@ export const FETCH_COMMIT_URL = `https://api.github.com/repos/${OWNER}/${REPO}/c
 export const FETCH_TAG_URL = `https://api.github.com/repos/${OWNER}/${REPO}/tags?per_page=1`;
 export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
 
+export const MODELSCOPE_BASE_URL = "https://api-inference.modelscope.cn/"
+
 export const STABILITY_BASE_URL = "https://api.stability.ai";
 
 export const OPENAI_BASE_URL = "https://api.openai.com";
@@ -72,6 +74,7 @@ export enum ApiPath {
   ChatGLM = "/api/chatglm",
   DeepSeek = "/api/deepseek",
   SiliconFlow = "/api/siliconflow",
+  ModelScope = "/api/modelscope"
 }
 
 export enum SlotID {
@@ -130,6 +133,7 @@ export enum ServiceProvider {
   ChatGLM = "ChatGLM",
   DeepSeek = "DeepSeek",
   SiliconFlow = "SiliconFlow",
+  ModelScope = "ModelScope"
 }
 
 // Google API safety settings, see https://ai.google.dev/gemini-api/docs/safety-settings
@@ -246,6 +250,11 @@ export const Iflytek = {
 export const DeepSeek = {
   ExampleEndpoint: DEEPSEEK_BASE_URL,
   ChatPath: "chat/completions",
+};
+
+export const ModelScope = {
+  ExampleEndpoint: MODELSCOPE_BASE_URL,
+  ChatPath: "v1/chat/completions",
 };
 
 export const XAI = {
@@ -601,6 +610,10 @@ const alibabaModes = [
   "qwen-vl-max",
 ];
 
+const modelscopeModels = [
+  "Qwen/Qwen3-32B"
+];
+
 const tencentModels = [
   "hunyuan-pro",
   "hunyuan-standard",
@@ -825,6 +838,17 @@ export const DEFAULT_MODELS = [
       providerName: "SiliconFlow",
       providerType: "siliconflow",
       sorted: 14,
+    },
+  })),
+  ...modelscopeModels.map((name) => ({
+    name,
+    available: true,
+    sorted: seq++,
+    provider: {
+      id: "modelscope",
+      providerName: "ModelScope",
+      providerType: "modelscope",
+      sorted: 15,
     },
   })),
 ] as const;
