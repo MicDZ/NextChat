@@ -95,6 +95,9 @@ export function auth(req: NextRequest, modelProvider: ModelProvider) {
       case ModelProvider.DeepSeek:
         systemApiKey = serverConfig.deepseekApiKey;
         break;
+      case ModelProvider.ModelScope:
+        systemApiKey = serverConfig.modelscopeApiKey;
+        break;
       case ModelProvider.XAI:
         systemApiKey = serverConfig.xaiApiKey;
         break;
